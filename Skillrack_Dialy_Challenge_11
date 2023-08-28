@@ -1,0 +1,68 @@
+# *******Skillrack_Dialy_Challenge_11*******
+
+#Program minimum possible integer
+
+#Question:
+
+Minimum Possible Integer The program must accept two integers N and K as the input. The program must print the minimum possible integer X which can be obtained by modifying at most K digits in N as the output. Note: The number of digits in N and X should be equal without any leading zeros. 
+
+Boundary Condition(s): 1 <= N <= 10^7 1 <= K <= 7 
+
+Input Format: The first line contains N. The second line contains K. Output Format: The first line contains X. 
+
+Example Input/Output 1: 
+
+Input: 
+
+51528 
+
+3 
+
+Output: 
+
+10028 
+
+Explanation: 
+
+The minimum possible integer is obtained by modifying the first three digits of 51528. 
+The first digit of 51528 is changed to 1.
+The second digit of 51528 is changed to 0. 
+The third digit of 51528 is changed to 0.
+Hence the output is 10028 
+
+Example Input/Output 2: 
+
+Input: 
+
+10504 
+
+2 
+
+Output: 
+
+10000
+
+#Answer:
+
+st=input()
+
+num=int(input())
+
+slen=list(st)
+
+for i in range(len(slen)):
+  if num!=0:
+    if i==0 and slen[i]='1':
+      slen[i]='1'
+      num-=1
+    elif slen[i]>='1' and i != 0:
+      slen[i]='0'
+      num-=1
+  else:
+    break
+
+result=''.join(slen)
+
+print(result)
+
+#Skillrack_Dialy_Challenge_11
